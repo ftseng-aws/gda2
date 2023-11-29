@@ -22,9 +22,9 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 #### Part 1 - Crawling Metadata from Azure SQL Server
 
-** Full Demo **
+**Full Demo**
 
-[![](datazone-demo-part-4-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1-28Nov2023")
+[![](datazone-demo-part-4-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4")
 
 
 
