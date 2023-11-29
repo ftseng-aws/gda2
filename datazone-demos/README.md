@@ -44,18 +44,28 @@ Opening up the connector named "AzureSQL", we can dive deeper into the connectio
 
 ![datazonedemo](datazone-demo-part-4-3.gif) 
 <p align="center">
-     <i>AWS Glue connections</i>
+     <i>Connection details including JDBC Connection URL</i>
 </p>
 
 These details matches that over at our Azure SQL Server. 
 
 ![datazonedemo](datazone-demo-part-4-4.gif) 
 <p align="center">
-     <i>AWS Glue connections</i>
+     <i>Azure SQL server name</i>
 </p>
 
 With the preconfigured connections, we can configure a crawler that executes the crawling activity. Also within the crawler settings, you can choose to output the crawled metadata directly into AWS DataZone.
 
+![datazonedemo](datazone-demo-part-4-5.gif) 
+<p align="center">
+     <i>AWS Glue Crawler</i>
+</p>
+
 We initiate the crawling activity. This may take some time to complete especially if this is the first time we are crawling this source. Alternatively, we can also schedule the crawler to activate on a recurring basis.
+
+![datazonedemo](datazone-demo-part-4-6.gif) 
+<p align="center">
+     <i>Initiating Crawler activity</i>
+</p>
 
 Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.
