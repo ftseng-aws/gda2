@@ -24,10 +24,10 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 **Full Demo**
 
-[![](datazone-demo-part-4-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4")
-
-
-
+<video width="1920" height="1080" controls>
+  <source src="https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 In this section, we will demonstrate how to ingest metadata into AWS Data Zone from non-AWS sources. We are going to make use of AWS Glue to crawl a database within Azure SQL Server itself. 
 
