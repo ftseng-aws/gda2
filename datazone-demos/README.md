@@ -20,12 +20,16 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 ### Use Case #3 - Data Publication and Consumption workflow - Non AWS
 
+#### Part 1 - Crawling Metadata from Azure SQL Server
+
+** Full Demo **
+
 [![](datazone-demo-part-4-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1-28Nov2023")
 
-[![](datazone-demo-part-4-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2-28Nov2023.mp4")
 
 
-In this section, we will demonstrate how to ingest metadata into AWS Data Zone from non-AWS sources. We are going to make use of AWS Glue to crawl a database within Azure SQL itself. 
+
+In this section, we will demonstrate how to ingest metadata into AWS Data Zone from non-AWS sources. We are going to make use of AWS Glue to crawl a database within Azure SQL Server itself. 
 
 
 ![datazonedemo](datazone-demo-part-4-1.gif) 
@@ -81,3 +85,8 @@ We initiate the crawling activity. This may take some time to complete especiall
 </p>
 
 Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.
+
+
+
+
+[![](datazone-demo-part-4-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2-28Nov2023.mp4")
