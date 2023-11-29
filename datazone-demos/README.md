@@ -18,9 +18,22 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 [![](datazone-demo-part-2-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2-28Nov2023.mp4")
 
-### Use Case #3 - Data Publication and Consumption workflow - Non AWS
+### Use Case #3 - Acquiring metadata, preparation and publishing of data as data producer
 
-#### Part 1 - Crawling Metadata from Azure SQL Server
+In this use case, we will demonstrate how a data producer can gather metadata information from its data source, do some preparation work and publish the data to AWS DataZone for sharing. These are the steps:
+
+1. Crawling Metadata
+    - AWS data sources
+    - Non-AWS data sources
+2. Data Preparation     
+    - Inspecting the data schema
+    - Tagging schema with glossary terms
+    - Adding business metadata
+3. Data Publishing
+
+#### Crawling Metadata from AWS Data Sources
+
+#### Crawling Metadata from Non AWS Data Sourcse
 
 [Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4)
 
@@ -81,7 +94,7 @@ We initiate the crawling activity. This may take some time to complete especiall
 
 Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.
 
-#### Part 2 - Publishing data into AWS DataZone
+#### Data preparation
 
 [Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.mp4)
 
@@ -97,14 +110,14 @@ From within the **Household Income** project, we see there is one present data s
 
 One of the first few things we like to do as data publisher is to ensure that the data crawled from Glue is correct. From within **Inventory Data**, choose the dataset item we just imported, and check out the **Schema** tab. Here you will see a list of the different columns that has been automatically crawled from the Azure SQL Server data source.
 
-It is usually time consuming to edit and modify any incorrect column names, especially when we are crawling data from transactional systems. Within AWS DataZone, we make use of ML inference to infer the full column names from source itself. Sometimes this may come in the form of short forms or abbreviations. In our example, the raw column name extracted from Azure SQL Server is *gini coeff equiv hh income aft tax (mos)*. This is being automatically inferred to *Gini Coefficient For Equivalent Household Income After Tax*. 
-
-All inferred column names have this icon <insert>. You will be asked to accept or reject the inferred column names. 
+It is usually time consuming to edit and modify any incorrect column names, especially when we are crawling data from transactional systems. Within AWS DataZone, we make use of ML inference to infer the full column names from source itself. Sometimes this may come in the form of short forms or abbreviations. In our example, the raw column name extracted from Azure SQL Server is *gini coeff equiv hh income aft tax (mos)*. This is being automatically inferred to *Gini Coefficient For Equivalent Household Income After Tax*. (See red box highlighted in the gif) All inferred column names have this icon ![inline image](infer.png). You will be asked to accept or reject the inferred column names. 
 
 ![datazonedemo](datazone-demo-part-4-9.gif) 
 <p align="center">
-     <i>Inspecing the data schema</i>
+     <i>Inspecting the data schema</i>
 </p>
+
+**Tagging schema with glossary terms**
 
 To standardise data intepretation and formats across your organisation, it is often advantageous to define a data glossary of your organisational definition of certain data terms. Within AWS DataZone you can tag each column with a predefined glossary term. 
 
@@ -118,7 +131,7 @@ In the example, let's say the term *gini coeff* is well-defined in your organisa
 
 **Adding Business Metadata**
 
-We add business metadata to an existing inventory data using **Metadata Forms**. In this case let's provide a data SLA level to inform users of the frequency we intend to update this dataset.
+We further improve the contextual information for each dataset by adding business metadata. To add business metadata to an existing inventory data using **Metadata Forms**. In this case let's provide a data SLA level to inform users of the frequency we intend to update this dataset. 
 
 ![datazonedemo](datazone-demo-part-4-11.gif) 
 <p align="center">
@@ -126,3 +139,99 @@ We add business metadata to an existing inventory data using **Metadata Forms**.
 </p>
 
 [![](datazone-demo-part-4-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2-28Nov2023.mp4")
+
+
+#### Data Publishing 
+
+Once you are done, you can publish the data to the wider AWS Data Zone domain for consumers to access.
+
+![datazonedemo](datazone-demo-part-4-13.gif) 
+<p align="center">
+     <i>Publishing data set</i>
+</p>
+
+### Use Case 4 - Searching and Requesting for data access as a data consumer
+
+[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5.mp4)
+
+Now that data has been publish, we are going to obtain this data as a consumer. 
+This typically goes through a few steps:
+
+1. Browsing and identifying suitable datasets
+2. Requesting access to the data
+3. Fulfilment of data access at source
+
+**Browsing and identifying suitable datasets**
+
+From within our Data Portal, we would be able to data published by projects. 
+
+![datazonedemo](datazone-demo-part-5-1.gif) 
+<p align="center">
+     <i>Viewing datasets as consumer</i>
+</p>
+
+The information added during the data preparation phase prior to publishing can be viewed as the consumer, providing added context to the data.
+
+![datazonedemo](datazone-demo-part-5-2.gif) 
+<p align="center">
+     <i>Previewing datasets before subscribing</i>
+</p>
+
+If satisfied, the data consumer can move on to subscribe to the data. To do this you must select a project in which to subscribe. Once the subscription is approved, the dataset would be populated in the chosen project.
+
+![datazonedemo](datazone-demo-part-5-3.gif) 
+<p align="center">
+     <i>Subscribing to the dataset</i>
+</p>
+
+**Requesting access to the data**
+
+Over at the producer end, we would receive a data request. We can preview the request details, and if satisfied, we can move on to grant access to the data.
+
+![datazonedemo](datazone-demo-part-5-4.gif) 
+<p align="center">
+     <i>Data Producer granting access to data request</i>
+</p>
+
+**Fulfilment of data access at source**
+
+After approval of the data access is granted, AWS DataZone helps with fulfiling this secure access to the data at its source, working with the required source system data technology. For AWS data sources like S3 or RDS, AWS DataZone takes care of the access fulfilment automatically behind the scenes using AWS IAM. 
+
+In this example, once data access is fulfilled, the user can immediately start querying with AWS Athena, as the required IAM role assumption has been taken care of. Do note, this example involves cross-account role assumption as both producer and consumer are using different AWS Accounts.
+
+![datazonedemo](datazone-demo-part-5-5.gif) 
+<p align="center">
+     <i>Granting secure data access to AWS data sources</i>
+</p>
+
+For non-AWS sources, AWS DataZone is also able to support the provisioning of data access. In this example, once data access is approved, a set of JDBC connection temporary credentials have been generated adn sent to the requesters email securely.
+
+![datazonedemo](datazone-demo-part-5-6.gif) 
+<p align="center">
+     <i>Granting secure data access to non AWS data sources</i>
+</p>
+
+The requester can then make use of data exploitation tooling of their choice (in this case Tableau) to start analysing the data.
+
+![datazonedemo](datazone-demo-part-5-7.gif) 
+<p align="center">
+     <i>Using Tableau to access the approved data set</i>
+</p>
+
+### Use Case 5 - Revoking access to subscribed data set as data producer
+
+As a data producer within AWS DataZone, you reserve the right to terminate access by anyone to your dataset. This allows you to retain full control and security of your data. 
+
+To do this, you can simply go back to previously approved request, and hit the **Revoke Subscription** button. The access is now removed. 
+
+![datazonedemo](datazone-demo-part-5-8.gif) 
+<p align="center">
+     <i>Revoking access to subscribed data as data producer</i>
+</p>
+
+The data consumer can no longer access this dataset moving forwards.
+
+![datazonedemo](datazone-demo-part-5-9.gif) 
+<p align="center">
+     <i>Previously granted credentials will not be able to work</i>
+</p>
