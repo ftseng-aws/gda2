@@ -54,16 +54,28 @@ These details matches that over at our Azure SQL Server.
      <i>Azure SQL server name</i>
 </p>
 
-With the preconfigured connections, we can configure a crawler that executes the crawling activity. Also within the crawler settings, you can choose to output the crawled metadata directly into AWS DataZone.
+With the preconfigured connections, we can configure a crawler that executes the crawling activity. 
 
 ![datazonedemo](datazone-demo-part-4-5.gif) 
 <p align="center">
      <i>AWS Glue Crawler</i>
 </p>
 
+![datazonedemo](datazone-demo-part-4-6.gif) 
+<p align="center">
+     <i>Configuring crawling source</i>
+</p>
+
+Also within the crawler settings, you can choose to output the crawled metadata directly into AWS DataZone.
+
+![datazonedemo](datazone-demo-part-4-7.gif) 
+<p align="center">
+     <i>Output crawled metadata to AWS DataZone database</i>
+</p>
+
 We initiate the crawling activity. This may take some time to complete especially if this is the first time we are crawling this source. Alternatively, we can also schedule the crawler to activate on a recurring basis.
 
-![datazonedemo](datazone-demo-part-4-6.gif) 
+![datazonedemo](datazone-demo-part-4-8.gif) 
 <p align="center">
      <i>Initiating Crawler activity</i>
 </p>
