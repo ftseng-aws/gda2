@@ -24,7 +24,7 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 **Full Demo**
 
-<video width="800" height="600" controls>
+<video width="1920" height="" controls>
   <source src="https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
