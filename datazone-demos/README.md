@@ -1,8 +1,13 @@
-# datazone-demos
+# Datazone-demos
 ## Background
-We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastructure Workshop conducted on 1st Nov 2023.
+
+We built a mini demo environment for AWS Datazone for a customer showcase.
 
 ## Setup
+
+This is our demo environment setup involving multiple AWS accounts as well as an Azure account.
+
+![Datazone_demo_setup](https://dwei4f633mwy3.cloudfront.net/datazone-demo-setup.jpg)
 
 ## AWS DataZone Key Concepts
 
