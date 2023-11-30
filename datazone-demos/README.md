@@ -147,10 +147,10 @@ We will directly import the metadata and schema into AWS DataZone. We will selec
 
 <!--We initiate the crawling activity. This may take some time to complete especially if this is the first time we are crawling this source. Alternatively, we can also schedule the crawler to activate on a recurring basis.-->
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-8.gif) -->
-<!--<p align="center">-->
-<!--     <i>Initiating Crawler activity</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-8.gif) 
+<p align="center">
+     <i>Initiating Crawler activity</i>
+</p>
 
 <!--Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.-->
 
