@@ -6,6 +6,33 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 ## AWS DataZone Key Concepts
 
+[AWS DataZone Documentation](https://docs.aws.amazon.com/datazone/latest/userguide/what-is-datazone.html)
+
+Amazon DataZone is a data management service that makes it faster and easier for you to catalog, discover, share, and govern data stored across AWS, on-premises, and third-party sources. With Amazon DataZone, administrators who oversee organization’s data assets can manage and govern access to data using fine-grained controls. These controls help ensure access with the right level of privileges and context. Amazon DataZone makes it easy for engineers, data scientists, product managers, analysts, and business users to share and access data throughout an organization so they can discover, use, and collaborate to derive data-driven insights.
+
+The following are some concepts and key terms used within AWS DataZone:
+
+![Datazone_keyconcepts](https://dwei4f633mwy3.cloudfront.net/Datazone_keyconcepts.png)
+
+### Domain
+
+You can use Amazon DataZone domains to organize your assets, users, and their projects. By associating additional AWS accounts with your Amazon DataZone domains, you can bring together your data sources. You can then publish assets from these data sources to your domain's catalog, with metadata forms and glossaries that improve metadata completeness and quality. You can also search and browse these assets to see what data is published in the domain. Additionally, you can join projects to collaborate with others users, subscribe to assets, and use project environments to access analytics tools, including Amazon Athena and Amazon Redshift. Amazon DataZone domains enable you with the flexibility to reflect the data and analytics needs of your organizational structure, whether it's creating a single Amazon DataZone domain for your enterprise or multiple Amazon DataZone domains for different business units.
+
+### Projects
+
+Projects enable a group of users to collaborate on various business use cases that involve publishing, discovering, subscribing to, and consuming data in the Amazon DataZone catalog. Project members consume assets from the Amazon DataZone catalog and produce new assets using one or more analytical workflows. Projects support the following activities within the data portal:
+
+- Project owners can add members with owner and contributor permissions
+- Project members can be SSO users, SSO groups, and IAM users
+- Project members can request subscription to the assets in the data catalog
+- Subscription approvals are provided to the projects
+
+### Environments
+
+Environments are collections of zero or more configured resources (for example, an Amazon S3, an AWS Glue database, or an Amazon Athena workgroup), with a given set of IAM principals who can operate on those resources. Environments are created by using environment proﬁles which are pre-configured sets of resources and blueprints that provide reusable templates for creating environments. Environment profiles define settings such as the AWS account or region in which environments are deployed.
+
+*Curating of your project inventory assets* - after creating a project inventory, data owners can curate their inventory assets with the required business metadata by adding or updating business names (asset and schema), descriptions (asset and schema), read me, glossary terms (asset and schema), and metadata forms. You can do this via the data portal or by using the Amazon DataZone APIs. Each edit to your asset creates a new inventory version.
+
 ## Demo 
 
 ### Use Case #1 - Single Sign On using Azure AD Federation
