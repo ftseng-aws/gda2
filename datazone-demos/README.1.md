@@ -48,7 +48,7 @@ AWS DataZone integrates with a variety of SSO providers such as AWS Identity Cen
 
 In this demonstration we are integrating with standard Azure AD federation, but integration with Techpass would follow a similar process. Once authentication, AWS DataZone users gets access to the DataZone data portal, which abstracts away the underlying implementation of AWS DataZone and presents a business-friendly interface.
 
-![datazonedemo](datazone-demo-part-1.gif) 
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-1.gif) 
 <p align="center">
      <i>SSO access via Azure AD Federation to AWS DataZone Data Portal</i>
 </p>
@@ -74,7 +74,7 @@ In this section, we will demonstrate how to ingest metadata of existing data sou
 
 Our source data is being stored in S3, and we will be using AWS Glue crawler to extract the metadata and data schema. 
 
-![datazonedemo1](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1.gif) 
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1.gif) 
 <p align="center">
      <i>S3 as data source</i>
 </p>
