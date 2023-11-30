@@ -74,241 +74,241 @@ In this section, we will demonstrate how to ingest metadata of existing data sou
 
 Our source data is being stored in S3, and we will be using AWS Glue crawler to extract the metadata and data schema. 
 
-<!--![datazonedemo1](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1.gif) -->
-<!--<p align="center">-->
-<!--     <i>S3 as data source</i>-->
-<!--</p>-->
+![datazonedemo1](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1.gif) 
+<p align="center">
+     <i>S3 as data source</i>
+</p>
 
 We will directly import the metadata and schema into AWS DataZone. We will select a preconfigured DataZone database entity to hold the data.
 
 ![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2.gif) 
-<!--<p align="center">-->
-<!--     <i>Setting crawler output and frequency</i>-->
-<!--</p>-->
+<p align="center">
+     <i>Setting crawler output and frequency</i>
+</p>
 
-<!--Once done we will hit the crawler to **Run**, and we can observe the progress near the bottom of the screen.-->
+Once done we will hit the crawler to **Run**, and we can observe the progress near the bottom of the screen.
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-3.gif) -->
-<!--<p align="center">-->
-<!--     <i>Initiating crawl</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-3.gif) 
+<p align="center">
+     <i>Initiating crawl</i>
+</p>
 
-<!--#### Crawling Metadata from Non AWS Data Sourcse-->
+#### Crawling Metadata from Non AWS Data Sourcse
 
-<!--[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4)-->
+[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.mp4)
 
-<!--In this section, we will demonstrate how to ingest metadata into AWS Data Zone from non-AWS sources. We are using this data set **HDB Resale Prices Data** available on [Singstat](https://tablebuilder.singstat.gov.sg/table/TS/M810361).We are going to make use of AWS Glue to crawl a database within Azure SQL Server itself. -->
+In this section, we will demonstrate how to ingest metadata into AWS Data Zone from non-AWS sources. We are using this data set **HDB Resale Prices Data** available on [Singstat](https://tablebuilder.singstat.gov.sg/table/TS/M810361).We are going to make use of AWS Glue to crawl a database within Azure SQL Server itself. 
 
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.gif) -->
-<!--<p align="center">-->
-<!--     <i>Selecting AWS Glue from AWS Console</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-1.gif) 
+<p align="center">
+     <i>Selecting AWS Glue from AWS Console</i>
+</p>
 
-<!--Within AWS Glue, we have a number of pre-configured connections. For transactional databases, AWS Glue establishes these connections over JDBC. -->
+Within AWS Glue, we have a number of pre-configured connections. For transactional databases, AWS Glue establishes these connections over JDBC. 
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.gif) -->
-<!--<p align="center">-->
-<!--     <i>AWS Glue connections</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.gif) 
+<p align="center">
+     <i>AWS Glue connections</i>
+</p>
 
-<!--Opening up the connector named "AzureSQL", we can dive deeper into the connection details. Here you can see that we have preconfigured the necessary details to initiate a JDBC connection to our Azure SQL Server such as the JDBC connection URL and other details.-->
+Opening up the connector named "AzureSQL", we can dive deeper into the connection details. Here you can see that we have preconfigured the necessary details to initiate a JDBC connection to our Azure SQL Server such as the JDBC connection URL and other details.
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-3.gif) -->
-<!--<p align="center">-->
-<!--     <i>Connection details including JDBC Connection URL</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-3.gif) 
+<p align="center">
+     <i>Connection details including JDBC Connection URL</i>
+</p>
 
-<!--These details matches that over at our Azure SQL Server. -->
+These details matches that over at our Azure SQL Server. 
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-4.gif) -->
-<!--<p align="center">-->
-<!--     <i>Azure SQL server name</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-4.gif) 
+<p align="center">
+     <i>Azure SQL server name</i>
+</p>
 
-<!--With the preconfigured connections, we can configure a crawler that executes the crawling activity. -->
+With the preconfigured connections, we can configure a crawler that executes the crawling activity. 
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-5.gif) -->
-<!--<p align="center">-->
-<!--     <i>AWS Glue Crawler</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-5.gif) 
+<p align="center">
+     <i>AWS Glue Crawler</i>
+</p>
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-6.gif) -->
-<!--<p align="center">-->
-<!--     <i>Configuring crawling source</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-6.gif) 
+<p align="center">
+     <i>Configuring crawling source</i>
+</p>
 
-<!--Also within the crawler settings, you can choose to output the crawled metadata directly into AWS DataZone.-->
+Also within the crawler settings, you can choose to output the crawled metadata directly into AWS DataZone.
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-7.gif) -->
-<!--<p align="center">-->
-<!--     <i>Output crawled metadata to AWS DataZone database</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-7.gif) 
+<p align="center">
+     <i>Output crawled metadata to AWS DataZone database</i>
+</p>
 
-<!--We initiate the crawling activity. This may take some time to complete especially if this is the first time we are crawling this source. Alternatively, we can also schedule the crawler to activate on a recurring basis.-->
+We initiate the crawling activity. This may take some time to complete especially if this is the first time we are crawling this source. Alternatively, we can also schedule the crawler to activate on a recurring basis.
 
-![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-1.gif) 
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-8.gif) 
 <p align="center">
      <i>Initiating Crawler activity</i>
 </p>
 
-<!--Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.-->
+Now that our crawling activity is complete, let's take a look at the most recent crawl job. You can also see previous runs of the crawler.
 
-<!--#### Data preparation-->
-
-
-<!--[Full Demo - Amazon S3](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2.mp4)   -->
-<!--[Full Demo - Azure SQL](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.mp4)-->
-
-<!--Now that our crawl activity is complete, we head back into the data portal. From there we will do some level of preparation work before publishing this into AWS DataZone for wider use.-->
-
-<!--From within both **HDB Price Information** and **Household Income Information** project, we see there is one present data source which is pointing to glue crawler we configured earlier. The crawled data appears under **Inventory Data**. -->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-4.gif) -->
-<!--<p align="center">-->
-<!--     <i>Crawled information are populated under respective projects</i>-->
-<!--</p>-->
+#### Data preparation
 
 
+[Full Demo - Amazon S3](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2.mp4)   
+[Full Demo - Azure SQL](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.mp4)
 
-<!--From here there are several things we will do: -->
+Now that our crawl activity is complete, we head back into the data portal. From there we will do some level of preparation work before publishing this into AWS DataZone for wider use.
 
-<!--1. Inspecting the data schema-->
-<!--2. Tagging schema with glossary terms-->
-<!--3. Add business metadata-->
+From within both **HDB Price Information** and **Household Income Information** project, we see there is one present data source which is pointing to glue crawler we configured earlier. The crawled data appears under **Inventory Data**. 
 
-<!--**Inspecting the data schema**-->
-
-<!--One of the first few things we like to do as data publisher is to ensure that the data crawled from Glue is correct. From within **Inventory Data**, choose the dataset item we just imported, and check out the **Schema** tab. Here you will see a list of the different columns that has been automatically crawled from the Azure SQL Server data source.-->
-
-<!--It is usually time consuming to edit and modify any incorrect column names, especially when we are crawling data from transactional systems. Within AWS DataZone, we make use of ML inference to infer the full column names from source itself. Sometimes this may come in the form of short forms or abbreviations. In our example, the raw column name extracted from Azure SQL Server is *gini coeff equiv hh income aft tax (mos)*. This is being automatically inferred to *Gini Coefficient For Equivalent Household Income After Tax*. (See red box highlighted in the gif) All inferred column names have this icon ![inline image](https://dwei4f633mwy3.cloudfront.net/infer.png). You will be asked to accept or reject the inferred column names. -->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-9.gif) -->
-<!--<p align="center">-->
-<!--     <i>Inspecting the data schema</i>-->
-<!--</p>-->
-
-<!--**Tagging schema with glossary terms**-->
-
-<!--To standardise data intepretation and formats across your organisation, it is often advantageous to define a data glossary of your organisational definition of certain data terms. Within AWS DataZone you can tag each column with a predefined glossary term. -->
-
-<!--In the example, let's say the term *gini coeff* is well-defined in your organisation and you would like to ensure that the understanding of this term is unified. You can tag this column with the *gini coeff* tag. Once tagged you can double confirm the definition by mouse over. -->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-10.gif) -->
-<!--<p align="center">-->
-<!--     <i>Tagging with organisational glossary term</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-4.gif) 
+<p align="center">
+     <i>Crawled information are populated under respective projects</i>
+</p>
 
 
-<!--**Adding Business Metadata**-->
 
-<!--We further improve the contextual information for each dataset by adding business metadata. To add business metadata to an existing inventory data using **Metadata Forms**. In this case let's provide a data SLA level to inform users of the frequency we intend to update this dataset. -->
+From here there are several things we will do: 
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-11.gif) -->
-<!--<p align="center">-->
-<!--     <i>Adding business metadata</i>-->
-<!--</p>-->
+1. Inspecting the data schema
+2. Tagging schema with glossary terms
+3. Add business metadata
 
-<!--#### Data Publishing -->
+**Inspecting the data schema**
 
-<!--Once you are done, you can publish the data to the wider AWS Data Zone domain for consumers to access.-->
+One of the first few things we like to do as data publisher is to ensure that the data crawled from Glue is correct. From within **Inventory Data**, choose the dataset item we just imported, and check out the **Schema** tab. Here you will see a list of the different columns that has been automatically crawled from the Azure SQL Server data source.
 
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-13.gif) -->
-<!--<p align="center">-->
-<!--     <i>Publishing data set</i>-->
-<!--</p>-->
+It is usually time consuming to edit and modify any incorrect column names, especially when we are crawling data from transactional systems. Within AWS DataZone, we make use of ML inference to infer the full column names from source itself. Sometimes this may come in the form of short forms or abbreviations. In our example, the raw column name extracted from Azure SQL Server is *gini coeff equiv hh income aft tax (mos)*. This is being automatically inferred to *Gini Coefficient For Equivalent Household Income After Tax*. (See red box highlighted in the gif) All inferred column names have this icon ![inline image](https://dwei4f633mwy3.cloudfront.net/infer.png). You will be asked to accept or reject the inferred column names. 
 
-<!--### Use Case 3 - Searching and Requesting for data access as a data consumer-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-9.gif) 
+<p align="center">
+     <i>Inspecting the data schema</i>
+</p>
 
-<!--[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5.mp4)-->
+**Tagging schema with glossary terms**
 
-<!--Now that data has been publish, we are going to obtain this data as a consumer. -->
-<!--This typically goes through a few steps:-->
+To standardise data intepretation and formats across your organisation, it is often advantageous to define a data glossary of your organisational definition of certain data terms. Within AWS DataZone you can tag each column with a predefined glossary term. 
 
-<!--1. Browsing and identifying suitable datasets-->
-<!--2. Requesting access to the data-->
-<!--3. Fulfilment of data access at source-->
+In the example, let's say the term *gini coeff* is well-defined in your organisation and you would like to ensure that the understanding of this term is unified. You can tag this column with the *gini coeff* tag. Once tagged you can double confirm the definition by mouse over. 
 
-<!--**Browsing and identifying suitable datasets**-->
-
-<!--From within our Data Portal, we would be able to data published by projects. -->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-1.gif) -->
-<!--<p align="center">-->
-<!--     <i>Viewing datasets as consumer</i>-->
-<!--</p>-->
-
-<!--The information added during the data preparation phase prior to publishing can be viewed as the consumer, providing added context to the data.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-2.gif) -->
-<!--<p align="center">-->
-<!--     <i>Previewing datasets before subscribing</i>-->
-<!--</p>-->
-
-<!--If satisfied, the data consumer can move on to subscribe to the data. To do this you must select a project in which to subscribe. Once the subscription is approved, the dataset would be populated in the chosen project.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-3.gif) -->
-<!--<p align="center">-->
-<!--     <i>Subscribing to the dataset</i>-->
-<!--</p>-->
-
-<!--**Requesting access to the data**-->
-
-<!--Over at the producer end, we would receive a data request. We can preview the request details, and if satisfied, we can move on to grant access to the data.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-4.gif) -->
-<!--<p align="center">-->
-<!--     <i>Data Producer granting access to data request</i>-->
-<!--</p>-->
-
-<!--**Fulfilment of data access at source**-->
-
-<!--After approval of the data access is granted, AWS DataZone helps with fulfiling this secure access to the data at its source, working with the required source system data technology. For AWS data sources like S3 or RDS, AWS DataZone takes care of the access fulfilment automatically behind the scenes using AWS IAM. -->
-
-<!--In this example, once data access is fulfilled, the user can immediately start querying with AWS Athena, as the required IAM role assumption has been taken care of. Do note, this example involves cross-account role assumption as both producer and consumer are using different AWS Accounts.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-5.gif) -->
-<!--<p align="center">-->
-<!--     <i>Granting secure data access to AWS data sources</i>-->
-<!--</p>-->
-
-<!--For non-AWS sources, AWS DataZone is also able to support the provisioning of data access. In this example, once data access is approved, a set of JDBC connection temporary credentials have been generated adn sent to the requesters email securely.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-6.gif) -->
-<!--<p align="center">-->
-<!--     <i>Granting secure data access to non AWS data sources</i>-->
-<!--</p>-->
-
-<!--The requester can then make use of data exploitation tooling of their choice (in this case Tableau) to start analysing the data.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-7.gif) -->
-<!--<p align="center">-->
-<!--     <i>Using Tableau to access the approved data set</i>-->
-<!--</p>-->
-
-<!--### Use Case 4 - Revoking access to subscribed data set as data producer-->
-
-<!--As a data producer within AWS DataZone, you reserve the right to terminate access by anyone to your dataset. This allows you to retain full control and security of your data. -->
-
-<!--To do this, you can simply go back to previously approved request, and hit the **Revoke Subscription** button. The access is now removed. -->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-8.gif) -->
-<!--<p align="center">-->
-<!--     <i>Revoking access to subscribed data as data producer</i>-->
-<!--</p>-->
-
-<!--The data consumer can no longer access this dataset moving forwards.-->
-
-<!--![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-9.gif) -->
-<!--<p align="center">-->
-<!--     <i>Previously granted credentials will not be able to work</i>-->
-<!--</p>-->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-10.gif) 
+<p align="center">
+     <i>Tagging with organisational glossary term</i>
+</p>
 
 
-<!--## Credits-->
+**Adding Business Metadata**
 
-<!--This demo is collectively brought to you by these AWS Solution Architects:-->
+We further improve the contextual information for each dataset by adding business metadata. To add business metadata to an existing inventory data using **Metadata Forms**. In this case let's provide a data SLA level to inform users of the frequency we intend to update this dataset. 
 
-<!--- Demo guide and explanation - *this README.md* [Thong Seng Foo](mailto:ftseng@amazon.com)    -->
-<!--- Demo Planning, Environment Setup [Indra Hartanto](mailto:indrahtt@amazon.com), [Bryan Chen](mailto:bryancwh@amazon.com), [Farid Baharuddin](mailto:faridbb@amazon.com)     -->
-<!--- Demo Video recording and edits - [Thong Seng Foo](mailto:ftseng@amazon.com),[Bryan Chen](mailto:bryancwh@amazon.com), [Farid Baharuddin](mailto:faridbb@amazon.com)    -->
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-11.gif) 
+<p align="center">
+     <i>Adding business metadata</i>
+</p>
+
+#### Data Publishing 
+
+Once you are done, you can publish the data to the wider AWS Data Zone domain for consumers to access.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-13.gif) 
+<p align="center">
+     <i>Publishing data set</i>
+</p>
+
+### Use Case 3 - Searching and Requesting for data access as a data consumer
+
+[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5.mp4)
+
+Now that data has been publish, we are going to obtain this data as a consumer. 
+This typically goes through a few steps:
+
+1. Browsing and identifying suitable datasets
+2. Requesting access to the data
+3. Fulfilment of data access at source
+
+**Browsing and identifying suitable datasets**
+
+From within our Data Portal, we would be able to data published by projects. 
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-1.gif) 
+<p align="center">
+     <i>Viewing datasets as consumer</i>
+</p>
+
+The information added during the data preparation phase prior to publishing can be viewed as the consumer, providing added context to the data.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-2.gif) 
+<p align="center">
+     <i>Previewing datasets before subscribing</i>
+</p>
+
+If satisfied, the data consumer can move on to subscribe to the data. To do this you must select a project in which to subscribe. Once the subscription is approved, the dataset would be populated in the chosen project.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-3.gif) 
+<p align="center">
+     <i>Subscribing to the dataset</i>
+</p>
+
+**Requesting access to the data**
+
+Over at the producer end, we would receive a data request. We can preview the request details, and if satisfied, we can move on to grant access to the data.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-4.gif) 
+<p align="center">
+     <i>Data Producer granting access to data request</i>
+</p>
+
+**Fulfilment of data access at source**
+
+After approval of the data access is granted, AWS DataZone helps with fulfiling this secure access to the data at its source, working with the required source system data technology. For AWS data sources like S3 or RDS, AWS DataZone takes care of the access fulfilment automatically behind the scenes using AWS IAM. 
+
+In this example, once data access is fulfilled, the user can immediately start querying with AWS Athena, as the required IAM role assumption has been taken care of. Do note, this example involves cross-account role assumption as both producer and consumer are using different AWS Accounts.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-5.gif) 
+<p align="center">
+     <i>Granting secure data access to AWS data sources</i>
+</p>
+
+For non-AWS sources, AWS DataZone is also able to support the provisioning of data access. In this example, once data access is approved, a set of JDBC connection temporary credentials have been generated adn sent to the requesters email securely.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-6.gif) 
+<p align="center">
+     <i>Granting secure data access to non AWS data sources</i>
+</p>
+
+The requester can then make use of data exploitation tooling of their choice (in this case Tableau) to start analysing the data.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-7.gif) 
+<p align="center">
+     <i>Using Tableau to access the approved data set</i>
+</p>
+
+### Use Case 4 - Revoking access to subscribed data set as data producer
+
+As a data producer within AWS DataZone, you reserve the right to terminate access by anyone to your dataset. This allows you to retain full control and security of your data. 
+
+To do this, you can simply go back to previously approved request, and hit the **Revoke Subscription** button. The access is now removed. 
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-8.gif) 
+<p align="center">
+     <i>Revoking access to subscribed data as data producer</i>
+</p>
+
+The data consumer can no longer access this dataset moving forwards.
+
+![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-9.gif) 
+<p align="center">
+     <i>Previously granted credentials will not be able to work</i>
+</p>
+
+
+## Credits
+
+This demo is collectively brought to you by these AWS Solution Architects:
+
+- Demo guide and explanation - *this README.md* [Thong Seng Foo](mailto:ftseng@amazon.com)    
+- Demo Planning, Environment Setup [Indra Hartanto](mailto:indrahtt@amazon.com), [Bryan Chen](mailto:bryancwh@amazon.com), [Farid Baharuddin](mailto:faridbb@amazon.com)     
+- Demo Video recording and edits - [Thong Seng Foo](mailto:ftseng@amazon.com),[Bryan Chen](mailto:bryancwh@amazon.com), [Farid Baharuddin](mailto:faridbb@amazon.com)    
