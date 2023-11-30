@@ -4,21 +4,24 @@ We built a mini demo environment for AWS Datazone for the SNDGO Data Infrastruct
 
 ## Setup
 
+## AWS DataZone Key Concepts
+
 ## Demo 
 
 ### Use Case #1 - Single Sign On using Azure AD Federation
 
-[![](datazone-demo-part-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-1.mp4")
+[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-1.mp4)
 
+AWS DataZone integrates with a variety of SSO providers such as AWS Identity Center and Azure AD. 
 
-### Use Case #2 - Data Publication and Consumption workflow - AWS
+In this demonstration we are integrating with standard Azure AD federation, but integration with Techpass would follow a similar process. Once authentication, AWS DataZone users gets access to the DataZone data portal, which abstracts away the underlying implementation of AWS DataZone and presents a business-friendly interface.
 
+![datazonedemo](datazone-demo-part-1.gif) 
+<p align="center">
+     <i>SSO access via Azure AD Federation to AWS DataZone Data Portal</i>
+</p>
 
-[![](datazone-demo-part-2-1.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1-28Nov2023")
-
-[![](datazone-demo-part-2-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2-28Nov2023.mp4")
-
-### Use Case #3 - Acquiring metadata, preparation and publishing of data as data producer
+### Use Case #2 - Acquiring metadata, preparation and publishing of data as data producer
 
 In this use case, we will demonstrate how a data producer can gather metadata information from its data source, do some preparation work and publish the data to AWS DataZone for sharing. These are the steps:
 
@@ -32,6 +35,31 @@ In this use case, we will demonstrate how a data producer can gather metadata in
 3. Data Publishing
 
 #### Crawling Metadata from AWS Data Sources
+
+[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-1.mp4)
+
+In this section, we will demonstrate how to ingest metadata of existing data sources within AWS. We are using this data set **HDB Resale Prices Data** available on [data.gov.sg](https://beta.data.gov.sg/collections/189/datasets/d_ea9ed51da2787afaf8e51f827c304208/view). 
+
+Our source data is being stored in S3, and we will be using AWS Glue crawler to extract the metadata and data schema. 
+
+![datazonedemo](datazone-demo-part-2-1.gif) 
+<p align="center">
+     <i>S3 as data source</i>
+</p>
+
+We will directly import the metadata and schema into AWS DataZone. We will select a preconfigured DataZone database entity to hold the data.
+
+![datazonedemo](datazone-demo-part-2-2.gif) 
+<p align="center">
+     <i>Setting crawler output and frequency</i>
+</p>
+
+Once done we will hit the crawler to **Run**, and we can observe the progress near the bottom of the screen.
+
+![datazonedemo](datazone-demo-part-2-3.gif) 
+<p align="center">
+     <i>Initiating crawl</i>
+</p>
 
 #### Crawling Metadata from Non AWS Data Sourcse
 
@@ -96,11 +124,22 @@ Now that our crawling activity is complete, let's take a look at the most recent
 
 #### Data preparation
 
-[Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.mp4)
+
+[Full Demo - Amazon S3](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-2-2.mp4)   
+[Full Demo - Azure SQL](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2.mp4)
 
 Now that our crawl activity is complete, we head back into the data portal. From there we will do some level of preparation work before publishing this into AWS DataZone for wider use.
 
-From within the **Household Income** project, we see there is one present data source which is pointing to glue crawler we configured earlier. The crawled data appears under **Inventory Data**. From here there are several things we will do: 
+From within both **HDB Price Information** and **Household Income Information** project, we see there is one present data source which is pointing to glue crawler we configured earlier. The crawled data appears under **Inventory Data**. 
+
+![datazonedemo](datazone-demo-part-2-4.gif) 
+<p align="center">
+     <i>Crawled information are populated under respective projects</i>
+</p>
+
+
+
+From here there are several things we will do: 
 
 1. Inspecting the data schema
 2. Tagging schema with glossary terms
@@ -150,7 +189,7 @@ Once you are done, you can publish the data to the wider AWS Data Zone domain fo
      <i>Publishing data set</i>
 </p>
 
-### Use Case 4 - Searching and Requesting for data access as a data consumer
+### Use Case 3 - Searching and Requesting for data access as a data consumer
 
 [Full Demo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5.mp4)
 
@@ -218,7 +257,7 @@ The requester can then make use of data exploitation tooling of their choice (in
      <i>Using Tableau to access the approved data set</i>
 </p>
 
-### Use Case 5 - Revoking access to subscribed data set as data producer
+### Use Case 4 - Revoking access to subscribed data set as data producer
 
 As a data producer within AWS DataZone, you reserve the right to terminate access by anyone to your dataset. This allows you to retain full control and security of your data. 
 
