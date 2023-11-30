@@ -209,9 +209,6 @@ We further improve the contextual information for each dataset by adding busines
      <i>Adding business metadata</i>
 </p>
 
-[![](datazone-demo-part-4-2.png)]("https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-2-28Nov2023.mp4")
-
-
 #### Data Publishing 
 
 Once you are done, you can publish the data to the wider AWS Data Zone domain for consumers to access.
