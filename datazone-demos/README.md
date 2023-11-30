@@ -112,19 +112,13 @@ Within AWS Glue, we have a number of pre-configured connections. For transaction
      <i>AWS Glue connections</i>
 </p>
 
-Opening up the connector named "AzureSQL", we can dive deeper into the connection details. Here you can see that we have preconfigured the necessary details to initiate a JDBC connection to our Azure SQL Server such as the JDBC connection URL and other details.
+Opening up the connector named "AzureSQL", we can dive deeper into the connection details. Here you can see that we have preconfigured the necessary details to initiate a JDBC connection to our Azure SQL Server such as the JDBC connection URL and other details. These details matches that over at our Azure SQL Server.
 
 ![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-3.gif) 
 <p align="center">
-     <i>Connection details including JDBC Connection URL</i>
+     <i>Connection details including JDBC Connection URL matching Azure SQL Server</i>
 </p>
 
-These details matches that over at our Azure SQL Server. 
-
-![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-4-4.gif) 
-<p align="center">
-     <i>Azure SQL server name</i>
-</p>
 
 With the preconfigured connections, we can configure a crawler that executes the crawling activity. 
 
