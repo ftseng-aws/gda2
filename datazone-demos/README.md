@@ -225,13 +225,7 @@ This typically goes through a few steps:
 
 **Browsing and identifying suitable datasets**
 
-From within our Data Portal, we would be able to data published by projects. 
-
-![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-1.gif) 
-<p align="center">
-     <i>Viewing datasets as consumer</i>
-</p>
-
+From within our Data Portal, we would be able to search for data published by projects.
 The information added during the data preparation phase prior to publishing can be viewed as the consumer, providing added context to the data.
 
 ![datazonedemo](https://dwei4f633mwy3.cloudfront.net/datazone-demo-part-5-2.gif) 
