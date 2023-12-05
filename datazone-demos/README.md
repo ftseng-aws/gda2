@@ -57,7 +57,7 @@ In this demonstration we are integrating with standard Azure AD federation, but 
 
 In this use case, we will demonstrate how a data producer can gather metadata information from its data source, do some preparation work and publish the data to AWS DataZone for sharing. These are the steps:
 
-2.1 Crawling Metadata    
+2.1 Crawling Metadata       
     2.1.1 AWS data sources    
     2.1.2 Non-AWS data sources     
 2.2 Data Preparation           
