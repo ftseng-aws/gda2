@@ -254,11 +254,16 @@ Over at the producer end, we would receive a data request. We can preview the re
 
 After approval of the data access is granted, AWS DataZone helps with fulfiling this secure access to the data at its source, working with the required source system data technology. For AWS data sources like S3 or RDS, AWS DataZone takes care of the access fulfilment automatically behind the scenes using AWS IAM. 
 
-In this example, once data access is fulfilled, the user can immediately start querying with AWS Athena, as the required IAM role assumption has been taken care of. Do note, this example involves cross-account role assumption as both producer and consumer are using different AWS Accounts.
-
 ![datazonedemo](atazone-demo-part-5-5.gif) 
 <p align="center">
-     <i>Granting secure data access to AWS data sources</i>
+     <i>Previewing approved data request as data consumer</i>
+</p>
+
+In this example, once data access is fulfilled, the user can immediately start querying with AWS Athena, as the required IAM role assumption has been taken care of. Do note, this example involves cross-account role assumption as both producer and consumer are using different AWS Accounts.
+
+![datazonedemo](atazone-demo-part-5-10.gif) 
+<p align="center">
+     <i>Querying data with Amazon Athena within Consumer project</i>
 </p>
 
 For non-AWS sources, AWS DataZone is also able to support the provisioning of data access. In this example, once data access is approved, a set of JDBC connection temporary credentials have been generated adn sent to the requesters email securely.
